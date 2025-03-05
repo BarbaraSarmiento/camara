@@ -1,0 +1,200 @@
+/* Navbar */
+@font-face {
+  font-family: 'Prin';
+  src: url('/assets/Letras/Letra.ttf') format('truetype');
+}
+
+.navbar {
+  font-family: Prin;
+  color: rgb(51, 255, 0);
+  background-image: url('/assets/grr.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Cambié de 'first baseline' a 'flex-start' para alinear a la izquierda */
+  padding: 10px;
+}
+
+.navbar-logo {
+  height: 70px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+h1 {
+  margin-left: 10px; /* Espacio entre el logo y el título */
+}
+
+/* Contenedor principal */
+.container {
+  font-family: Prin;
+  text-align: center;
+  padding: 20px;
+  color: rgb(51, 255, 0);
+}
+
+.Contenedor {
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-repeat: no-repeat; /* Impide que la imagen se repita */
+  background-position: center; /* Centra la imagen en el contenedor */
+  width: 100%; /* Asegura que el contenedor tenga un ancho del 100% */
+  height: 80vh; /* Asigna al contenedor una altura de toda la ventana */
+}
+
+/* Vista previa */
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Botón para tomar fotos */
+.capture-button {
+  background-color: #000000;
+  font-family: Prin;
+  color: rgb(51, 255, 0);
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.capture-button:hover {
+  background-color: #218838;
+}
+
+/* Mensajes */
+.loading {
+  color: orange;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Galería de imágenes */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Asegura que las imágenes se ajusten en varias filas */
+  justify-content: center; /* Centra las imágenes */
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.image-item {
+  position: relative;
+  margin-bottom: 15px;
+  width: 100px; /* Tamaño fijo para cada imagen */
+  margin: 5px;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.delete-button {
+  background: rgb(51, 255, 0);
+  border: none;
+  padding: 3px 10px;
+  font-size: 12px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background: #d42a16;
+}
+
+/* Footer */
+.footer {
+  background-image: url('/assets/grr.jpg');
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Medias queries para hacer responsive */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    height: 50px;
+  }
+
+  h1 {
+    margin-left: 0;
+  }
+
+  /* Contenedor */
+  .Contenedor {
+    height: 60vh;
+  }
+
+  /* Botón de captura */
+  .capture-button {
+    width: 100%; /* Botón se extiende a lo largo de la pantalla */
+  }
+
+  /* Galería de imágenes */
+  .image-gallery {
+    flex-direction: column; /* La galería se pone en columna */
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .image-item {
+    width: 80%; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+    margin: 10px 0;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar-logo {
+    height: 40px;
+  }
+
+  /* Contenedor */
+  .Contenedor {
+    height: 50vh;
+  }
+
+  /* Botón de captura */
+  .capture-button {
+    padding: 12px 18px;
+  }
+
+  /* Galería de imágenes */
+  .image-item {
+    width: 90%; /* Las imágenes son aún más pequeñas en pantallas muy pequeñas */
+    margin: 15px auto;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 12px;
+  }
+}

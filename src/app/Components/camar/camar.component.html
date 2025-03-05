@@ -1,0 +1,47 @@
+<!-- Navbar -->
+
+<nav class="navbar">
+  <img src="/assets/Camar.png" alt="Logo" class="navbar-logo" />
+  <h1> Gallery</h1>
+</nav>
+<div class="Contenedor">
+  <div class="container">
+    <!-- Vista previa de la imagen capturada -->
+    <div class="image-preview">
+      <img *ngIf="imgUrls.length > 0; else noImage" [src]="imgUrls[imgUrls.length - 0]" alt="Imagen capturada" />
+      <ng-template #noImage>
+        <div class="no-image">
+          📷 No hay imagen seleccionada
+        </div>
+      </ng-template>
+    </div>
+  
+    <!-- Botón para tomar una foto -->
+    <!-- Botones para tomar o subir una foto -->
+  <div class="button-group">
+  </div>
+  
+    <!-- Mensaje de carga -->
+    <div *ngIf="loading" class="loading">
+      ⏳ Cargando...
+    </div>
+  
+    <!-- Mensaje de error -->
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  
+    <!-- Galería de imágenes subidas -->
+    <div *ngIf="imgUrls.length > 0" class="image-gallery">
+      <div *ngFor="let imgUrl of imgUrls; let i = index" class="image-item">
+        <img [src]="imgUrl" alt="Imagen subida" class="uploaded-image" />
+        <button (click)="deleteImage(i)" class="delete-button">🗑️ Eliminar</button>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <button (click)="takePicture()" class="capture-button">📷 Tomar Foto</button>
+</footer>
+
+  
